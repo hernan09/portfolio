@@ -1,16 +1,22 @@
+#body{
+    width: 100%;
+    height: 100%;
+}
 #footer{
     background-color: black;
     color: white;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     height: 150px;
-
 }
+
 blockquote{
    position: relative;
-   top: 30%;
+   top: 50%;
 }
+
+.colorLink{
+    color: rgb(169, 231, 75)!important;
+  }
 #contactos{
     position: relative;
     top: -23px;
