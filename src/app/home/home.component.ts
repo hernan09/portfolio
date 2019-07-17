@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AboutComponent } from '../about/about.component';
+
 
 
 @Component({
@@ -8,10 +8,22 @@ import { AboutComponent } from '../about/about.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+   
+  show:Boolean = false
 
   constructor() {  }
   
-  gotoabout(){}  
+  contact(){
+
+   
+    if(this.show==false){
+      this.show = true
+
+      setTimeout(()=>this.show=false,10000)
+    }else{
+      this.show = false
+    }
+  }  
 
   ngOnInit() {
   }
