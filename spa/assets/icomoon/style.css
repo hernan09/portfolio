@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?2nuylf');
+  src:  url('fonts/icomoon.eot?2nuylf#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2nuylf') format('truetype'),
+    url('fonts/icomoon.woff?2nuylf') format('woff'),
+    url('fonts/icomoon.svg?2nuylf#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\e900";
+  color: #4172b8;
+}
+.icon-github1:before {
+  content: "\e901";
+}
+.icon-gitlab:before {
+  content: "\e902";
+  color: #e24329;
+}
+.icon-gmail:before {
+  content: "\e903";
+  color: #d14836;
+}
+.icon-instagram1:before {
+  content: "\e904";
+  color: #e4405f;
+}
+.icon-linkedin:before {
+  content: "\e905";
+  color: #0077b5;
+}
+.icon-microsoftoutlook:before {
+  content: "\e906";
+  color: #0072c6;
+}
+.icon-twitter1:before {
+  content: "\e907";
+  color: #1da1f2;
+}
+.icon-whatsapp1:before {
+  content: "\e908";
+  color: #25d366;
+}
+.icon-youtube:before {
+  content: "\e909";
+  color: #f00;
+}
+.icon-home:before {
+  content: "\e90a";
+}
+.icon-images:before {
+  content: "\e90e";
+}
+.icon-compass:before {
+  content: "\e949";
+}
+.icon-facebook2:before {
+  content: "\ea91";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-whatsapp:before {
+  content: "\ea93";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-github:before {
+  content: "\eab0";
+}
