@@ -1,6 +1,7 @@
-<div id="body">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+<div id="body" data-spy="scroll"data-target="#navbarSupportedContent">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbaar">
+  
+      <a class="nav-item" style="color: white">Hernan</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,24 +9,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#jumbo1">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link hvr-underline-from-left" href="#jumbo1">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#piso">Link</a>
+          <a class="nav-link hvr-underline-from-left" href="#piso">Link</a>
         </li>
         <li class="nav-item">
-                <a class="nav-link" href="#jumbo2">About<span class="sr-only">(current)</span></a>
+                <a class="nav-link hvr-underline-from-left" href="#jumbo2">About<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-                <a class="nav-link colorLink" href="#myTabContent">Portfolio<span class="sr-only">(current)</span></a>
+            <a class="nav-link colorLink hvr-underline-from-left" href="#myTabContent">Portfolio<span class="sr-only">(current)</span></a>
         </li>
        
       </ul> 
      
     </div>
+  
   </nav>
       <!---->
-      <div class="content-page" id="bodycont" >
+      <div class="content-page" id="bodycont" data-spy="scroll" data-target="#navbaar" data-offset="0">
         <div class="row">
             
           <div id="col1" class="col-md-4 col-sm-12 col-xs-12">
@@ -90,7 +92,7 @@
           </div>
           <div id="jumbo2" class="jumbotron">
               <blockquote class="blockquote text-center">
-              <h1 class="display-3">Hello, world!</h1>
+             
               <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
               <hr class="my-4">
               <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -99,49 +101,23 @@
               </p>
               </blockquote> 
           </div>
-          <ul class="nav nav-tabs">
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#profile">Profile</a>
-              </li>
-            
-              
-            </ul>
-            <div id="myTabContent" class="tab-content">
-              <div class="tab-pane fade" id="home">
-                  <blockquote class="blockquote text-center">
-                      <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-                      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                    </blockquote>
-              
-              </div>
-              <div id="prefin" class="tab-pane fade active show" id="profile">
-                  <blockquote class="blockquote text-center">
-                      <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-                      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                    </blockquote>
-              </div>
-            
-            </div>
+          <div id="footer"> 
+              <button *ngIf="!show" id="fab" type="button"(click)="contact()" class="hvr-underline-from-left"><span class="icon-home"></span></button>
+              <blockquote class="blockquote text-center">
+                  <div *ngIf="show" id="contactos">
+                      <span class="icon-gmail"></span>
+                      <span class="icon-instagram1"></span>
+                      <span class="icon-whatsapp1"></span>
+                      <span class="icon-facebook"></span>
+                
+                  </div>
+                 <img src="https://www.freelogodesign.org/file/app/client/thumb/e1dcdd78-1bfb-482b-a3d1-4c1af15349b8_200x200.png?1563561635271" id="logofot">
+                </blockquote>
+               
+          </div>
+         
     </div>
-    <div id="footer"> 
-        <button *ngIf="!show" id="fab" type="button"(click)="contact()" class="hvr-shutter-in-horizontal"><span class="icon-home"></span></button>
-        <blockquote class="blockquote text-center">
-            <div *ngIf="show" id="contactos">
-                <span class="icon-gmail"></span>
-                <span class="icon-instagram1"></span>
-                <span class="icon-whatsapp1"></span>
-                <span class="icon-facebook"></span>
-          
-            </div>
-              
-            
-          </blockquote>
-    </div>
+    
 </div>
 
 

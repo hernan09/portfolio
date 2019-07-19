@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
 
 
@@ -8,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-   
+ 
+
   show:Boolean = false
 
-  constructor() {  }
+  constructor() { 
+    
+   }
   
   contact(){
 
@@ -24,6 +28,8 @@ export class HomeComponent implements OnInit {
       this.show = false
     }
   }  
+  
+  
 
   ngOnInit() {
   }

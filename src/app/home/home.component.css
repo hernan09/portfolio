@@ -14,11 +14,15 @@
   opacity: 0.9;
   z-index: 999999999999999;
   background-color: black;
+  text-transform: uppercase;
 }
-
+.nav-link:active{
+  color: greenyellow!important;
+}
 .content-page{
   margin-top: 5%;
   height: 100%;
+  
 }
 
 #header{
@@ -34,7 +38,7 @@
   
 }
 .tab-pane{
-  margin-top: 20px;
+  margin-top: 60px;
 }
 .jumbotron{
   background-color: white;
@@ -54,6 +58,7 @@
 }
 #col2{
     color: #6c757d;
+    margin-top: -27px;
    
     
 }
@@ -129,30 +134,33 @@ h1{
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 #footer{
   background-color: black;
   color: white;
   width: 100%;
-  height: 150px;
+  height: 200px;
   opacity: 0.9;
 }
 
 blockquote{
  position: relative;
- top: -26px;
+ top: -40px;
  
 }
 #fab{
   position:fixed;
-  top: 95%;
+  bottom: 20px;
+  left: 0;
   width: 20%;
   font-size:20px ;
   max-width: 50px;
   min-width: 50px;
-  background-color: #2098D1;
+  color: black;
   opacity: 0.9;
   border: none;
+  z-index: 9999999999999;
   
   
 }
@@ -178,6 +186,9 @@ blockquote{
 }
 #contactos>span{
   cursor: pointer;
+}
+#logofot{
+  margin-top: 30px;
 }
 @media(min-width:960px){
   .card{
