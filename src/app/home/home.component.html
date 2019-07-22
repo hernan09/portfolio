@@ -12,7 +12,7 @@
           <a class="nav-link hvr-underline-from-left" href="#jumbo1">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link hvr-underline-from-left" href="#piso">Link</a>
+          <a class="nav-link hvr-underline-from-left" href="#piso">Links</a>
         </li>
         <li class="nav-item">
                 <a class="nav-link hvr-underline-from-left" href="#jumbo2">About<span class="sr-only">(current)</span></a>
@@ -82,11 +82,19 @@
             </div>
           </div>
           <div id="col2" class="col-md-12 col-sm-12">
-            <h1>About me</h1>
+           
             <blockquote class="blockquote text-center">
-                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                <button type="button" class="btn btn-outline-dark hvr-underline-from-left">Success</button>
+                <h1 id="proyec" style="color: black"><strong>M</strong>is proyectos de Github</h1>
+              <ul id="ulink">
+                <li *ngFor="let link of links">
+                      <h5 for="">{{link.name}}</h5>
+                   <a href="{{link.link}}">{{link.link}}</a>
+                   <p>{{link.frame}}</p>
+                   <hr>
+                      
+                </li>
+              </ul>
+              
               </blockquote>
             
           </div>
