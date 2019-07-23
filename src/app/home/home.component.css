@@ -1,8 +1,8 @@
 
 .navbar {
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
@@ -15,7 +15,10 @@
   z-index: 999999999999999;
   background-color: black;
   text-transform: uppercase;
+  left: 0;
+ 
 }
+
 .nav-link:active{
   color: greenyellow!important;
 }
@@ -24,7 +27,11 @@
   height: 100%;
   
 }
-
+#log{
+  width: 80px;
+  height: 80px;
+  font-weight: 100;
+}
 #header{
   width: 100%;
   height: 300px;
@@ -58,9 +65,7 @@
 }
 #col2{
     color: #6c757d;
-    margin-top: -27px;
-   
-    
+
 }
 .card{
     width: 100%;
@@ -160,7 +165,6 @@ blockquote{
  
 }
 #proyec{
-  
   margin-bottom: 50px;
 }
 #fab{
@@ -179,15 +183,15 @@ blockquote{
   
 }
 .colorLink{
-
   color: greenyellow!important;
 }
+
 #contactos{
   position: fixed;
   top: 95%;
   left: 0;
   width: 30%;
-  max-width:200px ;
+  max-width:200px;
   margin: auto;
   display: flex;
   background-color: transparent ;
@@ -204,17 +208,112 @@ blockquote{
 #logofot{
   margin-top: 30px;
 }
+
+@media(max-width:769px){
+  .row{
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 12%;
+  }
+  #header{
+    width: 100%;
+    height: 300px;
+    background-image: url(../../assets/web-developer.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    filter: blur(1px);
+    margin-bottom: 20px;
+    
+  }
+}
+@media(max-width:430px){
+  .row{
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 15%;
+  }
+  #header{
+    width: 100%;
+    height: 300px;
+    background-image: url(../../assets/web-developer.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    filter: blur(1px);
+    margin-bottom: 20px;
+    
+  }
+  .display-3{
+    margin-top: 0;
+    color: black;
+    font-size: 2.5rem;
+  }
+}
+@media(max-width:380px){
+  .row{
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 25%;
+  }
+  #header{
+    width: 100%;
+    height: 300px;
+    background-image: url(../../assets/web-developer.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    filter: blur(1px);
+    margin-bottom: 20px;
+    
+  }
+  .display-3{
+    margin-top: 0;
+    color: black;
+    font-size: 2rem;
+  }
+}
+
+
 @media(min-width:960px){
   .card{
     width: 100%;
     margin: 0;
     padding: 0;
     border: none;
-    margin-top: 4%;
+    margin-top: 10%;
     -webkit-animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	    animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	  animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     
 }
+}
+/*keyframe de el navbar*/
+@-webkit-keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.9;
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0.9;
+  }
 }
 
 

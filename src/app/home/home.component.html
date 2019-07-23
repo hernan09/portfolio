@@ -1,24 +1,24 @@
 <div id="body" data-spy="scroll"data-target="#navbarSupportedContent">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbaar">
   
-      <a class="nav-item" style="color: white">Hernan</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span ><img id="log" src="https://www.freelogodesign.org/file/app/client/thumb/eed5e0fb-e42d-4a6e-9afc-857a8c1f932f_200x200.png?1563906036126" alt=""></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link hvr-underline-from-left" href="#jumbo1">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(jumbo1)" >Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link hvr-underline-from-left" href="#piso">Links</a>
+          <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(piso)">Links</a>
         </li>
         <li class="nav-item">
-                <a class="nav-link hvr-underline-from-left" href="#jumbo2">About<span class="sr-only">(current)</span></a>
+                <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(jumbo2)" >About<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link colorLink hvr-underline-from-left" href="#myTabContent">Portfolio<span class="sr-only">(current)</span></a>
+            <a class="nav-link colorLink hvr-underline-from-left"(click)="scrollToElement(myTabContent)">Portfolio<span class="sr-only">(current)</span></a>
         </li>
        
       </ul> 
@@ -35,7 +35,7 @@
               
                 <div class="card-body">
                   <div id="cuadro">
-                      <img id="yo" src="../../assets/yo.jpg"  alt="">
+                      <img id="yo" src="assets/yo.jpg"  alt="">
                   </div>
                   <h5 class="card-title">Hernan Dario Gomez</h5>
                   <h6 class="card-subtitle">Frontend Developer</h6>
@@ -45,7 +45,7 @@
           <div id="col2" class="col-md-8 col-sm-12">
             <h1>About me</h1>
             <blockquote class="blockquote text-center">
-                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <p class="mb-0">Desarrollador FrontEnd apasionado por la tecnologia web</p>
                 <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
                 <button type="button" class="btn btn-outline-dark hvr-underline-from-left ">Success</button>
               </blockquote>
@@ -55,9 +55,9 @@
         <div id="header">
 
         </div>
-        <div id="jumbo1" class="jumbotron">
+        <div #jumbo1  class="jumbotron">
             <blockquote class="blockquote text-center">
-            <h1 class="display-3">Hello, world!</h1>
+            <h1 class="display-3">Desarrollador Frontend</h1>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -69,7 +69,7 @@
         <div id="header">
 
         </div>
-        <div id="piso"  class="col-md-12 col-sm-12">
+        <div #piso  class="col-md-12 col-sm-12">
             <div class="card">
               
                 <div class="card-body">
@@ -98,7 +98,7 @@
               </blockquote>
             
           </div>
-          <div id="jumbo2" class="jumbotron">
+          <div #jumbo2 class="jumbotron">
               <blockquote class="blockquote text-center">
              
               <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -109,6 +109,17 @@
               </p>
               </blockquote> 
           </div>
+          <div #myTabContent  class="jumbotron">
+            <blockquote class="blockquote text-center">
+            <h1 class="display-3">Development!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p class="lead">
+              <a class="btn btn-outline-dark hvr-underline-from-left" href="#" role="button">Learn more</a>
+            </p>
+            </blockquote>
+        </div>
           <div id="footer"> 
               <button *ngIf="!show" id="fab" type="button"(click)="contact()" class="hvr-underline-from-left"><span class="icon-home"></span></button>
               <blockquote class="blockquote text-center">
