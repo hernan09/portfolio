@@ -12,6 +12,7 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
   jquery:any
+  aboutMostrar:boolean=false
   links = [
     {"link":"https://github.com/hernan09/React-App-ShowVideo","name":"Wow Videos","frame":"React.js"},
     {"link":"https://github.com/hernan09/ionic-animal","name":"sonidos de animales","frame":"Ionic"},
@@ -19,6 +20,25 @@ export class HomeComponent implements OnInit {
     {"link":"https://github.com/hernan09/CDT-app","name":"pagina de noticias","frame":"React.js"},
     {"link":"https://github.com/hernan09/MapZero","name":"App con Google map","frame":"Angular && Ionic"}
      ]
+
+    frames=[
+      {"name":"Angular.js"},
+      {"name":"React.js"},
+      {"name":".NET"},
+      {"name":"VB.NET"},
+      {"name":"HTML 5"},
+      {"name":"CSS3"},
+      {"name":"JavaScript"},
+      {"name":"GIT"},
+      {"name":"Node.js"},
+      {"name":"Vue.js"},
+      {"name":"Mongo Db"},
+      {"name":"SQL"},
+      {"name":"Jquery"},
+      {"name":"IONIC"},
+      {"name":"Bootstrap"},
+      {"name":"Scrum"}
+      ] 
   
 
   show:Boolean = false
@@ -47,15 +67,18 @@ export class HomeComponent implements OnInit {
 
   }
   
-  clickAfuera(){
-    $(document).on('click','.navbar-collapse.in',(e)=> {
-      console.log('corre el jquery')
-      if( $(e.target).is('a:not(".dropdown-toggle")') ) {
-          $(this).collapse('hide');
-      }
-  });
+  aboutmeshow(){
+
+    if(this.aboutMostrar==false){
+      this.aboutMostrar=true
+    }else{
+      this.aboutMostrar=false
+    }
+ 
   }
-  
+  showinfotec(name){
+    console.log(name)
+  }
   ngOnInit() {
   }
 

@@ -18,7 +18,7 @@
                 <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(jumbo2)" >About<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link colorLink hvr-underline-from-left"(click)="scrollToElement(myTabContent)">Portfolio<span class="sr-only">(current)</span></a>
+            <a class="nav-link colorLink hvr-underline-from-left"(click)="scrollToElement(footer)">Portfolio<span class="sr-only">(current)</span></a>
         </li>
        
       </ul> 
@@ -105,22 +105,42 @@
               <hr class="my-4">
               <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
               <p class="lead">
-                <a class="btn btn-outline-dark hvr-underline-from-left" href="#" role="button">Learn more</a>
+                <button [ngClass]="{'classabout':aboutMostrar}"  class="btn btn-outline-dark hvr-underline-from-left"(click)="aboutmeshow()">About Me</button>
               </p>
               </blockquote> 
           </div>
-          <div #myTabContent  class="jumbotron">
+          <div #myTabContent id="myTabContent" *ngIf="!aboutMostrar" class="jumbotron">
             <blockquote class="blockquote text-center">
             <h1 class="display-3">Development!</h1>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <p class="lead">
-              <a class="btn btn-outline-dark hvr-underline-from-left" href="#" role="button">Learn more</a>
-            </p>
+           
             </blockquote>
-        </div>
-          <div id="footer"> 
+          </div>
+          <div #myTabContent2 *ngIf="aboutMostrar" class="jumbotron">
+            <blockquote class="blockquote text-center">
+            <h1 class="display-3">Tecnologias y Metodologias</h1>
+                 
+            <div class="card" id="aboutme" style="width: 18rem;">
+             
+              <div class="card-body">
+                <table class="table table-hover">
+                
+                  <tbody>
+                    <tr (click)="showinfotec(frame.name)" class="table-light" *ngFor="let frame of frames">
+                      <th scope="row">Nombre</th>
+                      <td>{{frame.name}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+              </div>
+            </div>
+            </blockquote>
+          </div>
+
+          <div #footer id="footer"> 
               <button *ngIf="!show" id="fab" type="button"(click)="contact()" class="hvr-underline-from-left"><span class="icon-home"></span></button>
               <blockquote class="blockquote text-center">
                   <div *ngIf="show" id="contactos">

@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik|Source+Sans+Pro&display=swap');
 .navbar {
   position: fixed;
   width: 100%;
@@ -51,7 +53,7 @@
   background-color: white;
 }
 .display-3{
-  margin-top: 0;
+  margin-top: -20px;
   color: black;
 }
 .row{
@@ -79,8 +81,14 @@
 }
 #ulink{
   padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.4rem;
 }
  #ulink>li{
+   list-style: none;
+   
+ }
+ #ulali>li{
    list-style: none;
  }
 .card-header{
@@ -116,6 +124,7 @@ h1{
     color: white;
     font-family: 'Times New Roman', Times, serif;
     margin-top: 10%;
+    font-size: 2.5rem;
 }
 
 .btn{
@@ -124,7 +133,7 @@ h1{
     margin-bottom: 2%;
     border: none;
     background-color: black;
-    color: white;
+    color:white;
     
 
 }
@@ -166,6 +175,7 @@ blockquote{
 }
 #proyec{
   margin-bottom: 50px;
+  font-size: 2rem;
 }
 #fab{
   position:fixed;
@@ -202,13 +212,28 @@ blockquote{
   animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
  
 }
+#aboutme{
+  margin: auto;
+}
 #contactos>span{
   cursor: pointer;
 }
 #logofot{
   margin-top: 30px;
 }
+#myTabContent{
+  -webkit-animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  margin-top: -30px;
+}
+#myTabContent2{
+  
+}
 
+.classabout{
+  background-color: #2098D1;
+  color:white;
+}
 @media(max-width:769px){
   .row{
     position: relative;
@@ -249,7 +274,7 @@ blockquote{
   .display-3{
     margin-top: 0;
     color: black;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 @media(max-width:380px){
@@ -276,6 +301,7 @@ blockquote{
     font-size: 2rem;
   }
 }
+
 
 
 @media(min-width:960px){
@@ -313,6 +339,31 @@ blockquote{
     -webkit-transform: translateY(0);
             transform: translateY(0);
     opacity: 0.9;
+  }
+}
+/*keyframe de devewlpment*/
+@-webkit-keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 
