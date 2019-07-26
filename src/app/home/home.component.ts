@@ -13,6 +13,7 @@ import * as $ from 'jquery';
 export class HomeComponent implements OnInit {
   jquery:any
   aboutMostrar:boolean=false
+  horario = Date.now()
   links = [
     {"link":"https://github.com/hernan09/React-App-ShowVideo","name":"Wow Videos","frame":"React.js"},
     {"link":"https://github.com/hernan09/ionic-animal","name":"sonidos de animales","frame":"Ionic"},
@@ -44,9 +45,10 @@ export class HomeComponent implements OnInit {
   show:Boolean = false
 
   constructor() { 
-       smoothscroll.polyfill();
+      smoothscroll.polyfill();
       this.links
-    
+
+      setInterval(()=>{console.log(this.horario),this.horario},1000)
    }
   
   contact(){
@@ -66,7 +68,11 @@ export class HomeComponent implements OnInit {
     destino.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
 
   }
+
   
+  
+
+
   aboutmeshow(){
 
     if(this.aboutMostrar==false){
@@ -80,6 +86,7 @@ export class HomeComponent implements OnInit {
     console.log(name)
   }
   ngOnInit() {
+   
   }
 
 }
