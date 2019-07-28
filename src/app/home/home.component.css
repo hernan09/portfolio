@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik|Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 .navbar {
   position: fixed;
   width: 100%;
@@ -138,7 +139,9 @@ h1{
 
 }
 blockquote>h1>strong{
-  color: greenyellow!important;
+  color: #2098D1!important;
+  font-family: 'Roboto Slab', serif;
+
 }
 .btn:active{
   color: white;
@@ -226,9 +229,7 @@ blockquote{
   animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   margin-top: -30px;
 }
-#myTabContent2{
-  
-}
+
 
 .classabout{
   background-color: #2098D1;

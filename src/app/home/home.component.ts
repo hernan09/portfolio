@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
       smoothscroll.polyfill();
       this.links
 
-      setInterval(()=>{console.log(this.horario),this.horario},1000)
+      setInterval(()=>{console.log(this.horario),this.hora()},1000)
    }
   
   contact(){
@@ -69,7 +69,13 @@ export class HomeComponent implements OnInit {
 
   }
 
-  
+  hora(){
+    if(this.horario){
+      
+      this.horario = Date.now()
+    }
+    return this.horario
+  }
   
 
 
