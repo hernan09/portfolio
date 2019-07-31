@@ -227,7 +227,10 @@ blockquote{
 #myTabContent{
   -webkit-animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  margin-top: -30px;
+  margin-top: -64px;
+}
+#myTabContent2{
+  margin-top: -64px;
 }
 
 

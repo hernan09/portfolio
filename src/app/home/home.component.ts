@@ -37,8 +37,7 @@ export class HomeComponent implements OnInit {
       {"name":"SQL"},
       {"name":"Jquery"},
       {"name":"IONIC"},
-      {"name":"Bootstrap"},
-      {"name":"Scrum"}
+      {"name":"Bootstrap"}
       ] 
   
 
