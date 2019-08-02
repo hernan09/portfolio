@@ -25,9 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgsRevealModule
+    NgsRevealModule,
+    
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 
