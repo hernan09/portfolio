@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import * as smoothscroll from "smoothscroll-polyfill";
+import { NgsRevealConfig } from 'ng-scrollreveal';
+
+
+
 import * as $ from 'jquery';
 
 
@@ -8,7 +12,9 @@ import * as $ from 'jquery';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers:[ NgsRevealConfig ] 
+ 
 })
 export class HomeComponent implements OnInit {
   jquery:any
@@ -41,11 +47,15 @@ export class HomeComponent implements OnInit {
       ] 
   
 
-  show:Boolean = false
+  show:Boolean = false 
 
-  constructor() { 
+  constructor( private config:NgsRevealConfig) { 
+
       smoothscroll.polyfill();
       this.links
+      
+      config.duration=1000;
+      config.easing='cubic-bezier(0.645, 0.045, 0.355, 1)'
 
       setInterval(()=>{console.log(this.horario),this.hora()},1000)
    }
@@ -62,6 +72,7 @@ export class HomeComponent implements OnInit {
     }
   }  
   
+
   scrollToElement(destino): void {
    
     destino.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
@@ -76,7 +87,7 @@ export class HomeComponent implements OnInit {
     return this.horario
   }
   
-
+  
 
   aboutmeshow(){
 
