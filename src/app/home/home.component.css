@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik|Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
 .navbar {
   position: fixed;
   width: 100%;
@@ -18,6 +19,8 @@
   z-index: 999999999999999;
   background-color: black;
   text-transform: uppercase;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.4rem;
   left: 0;
  
 }
@@ -123,7 +126,7 @@
 h1{
     text-align: center;
     color: white;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Amatic SC', cursive;
     margin-top: 10%;
     font-size: 2.5rem;
 }
@@ -140,7 +143,7 @@ h1{
 }
 blockquote>h1>strong{
   color: #2098D1!important;
-  font-family: 'Roboto Slab', serif;
+  
 
 }
 .btn:active{
@@ -183,17 +186,48 @@ blockquote{
 #fab{
   position:fixed;
   bottom: 20px;
-  left: 0;
-  width: 20%;
+  left:20px;
+  width: auto;
   font-size:20px ;
-  max-width: 50px;
+  max-width: 150px;
+  border-radius: 100%;
+  animation: ctaBody 5s ease-in-out infinite;
   min-width: 50px;
-  color: black;
-  opacity: 0.9;
+  color: white;
+  opacity: 0.8;
   border: none;
   z-index: 9999999999999;
+
   
   
+}
+#fab>img{
+  width: 50px;
+  height: 50px;
+  background-image: url(../../assets/css/user.png) no-repeat center center;
+  /*background: url(img/urg_logo.png) no-repeat center center;*/
+  background-size: 100%;
+  box-sizing: border-box;
+  opacity: 1;
+  margin-right: 130px;
+  border: none;
+}
+
+#fab>p{
+  position: absolute;
+  width: 90px;
+  height: 100px;
+  right: 12px;
+  bottom: -79px;
+  left: 31%;
+  font-size: 20px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+  animation: ctaText 5s ease-in-out infinite;
+  opacity: 0;
+  box-sizing: border-box;
 }
 .colorLink{
   color: greenyellow!important;
@@ -232,7 +266,15 @@ blockquote{
 #myTabContent2{
   margin-top: -64px;
 }
-
+#contenttecno{
+  display: flex;
+  flex-direction: row;
+}
+#loguito{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
 
 .classabout{
   background-color: #2098D1;
@@ -324,6 +366,81 @@ blockquote{
 	  animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     
 }
+}
+/*keyframe del texto*/
+@-webkit-keyframes ctaText {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*keyframe de roseta*/
+@-webkit-keyframes ctaBody {
+  0% {
+    width: 62px;
+    border-radius: 45px;
+  }
+  17% {
+    width: 62px;
+    border-radius: 45px;
+  }
+  29% {
+    width: 62px;
+    border-radius: 45px;
+  }
+  31% {
+    width: 62px;
+    border-radius: 45px;
+  }
+  32% {
+    width: 62px;
+    border-radius: 45px;
+  }
+  37% {
+    width: 150px;
+    border-radius: 45px;
+  }
+  39% {
+    width: 150px;
+    border-radius: 45px;
+  }
+  40% {
+    width: 150px;
+    border-radius: 45px;
+  }
+  95% {
+    width: 150px;
+    border-radius: 45px;
+  }
+  98% {
+    width: 62px;
+    border-radius: 45px;
+  }
+  100% {
+    width: 62px;
+    border-radius: 45px;
+  }
 }
 /*keyframe de el navbar*/
 @-webkit-keyframes fade-in-top {

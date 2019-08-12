@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgsRevealModule } from 'ng-scrollreveal';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductIdComponent } from './product-id/product-id.component';
 
 
 
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HomeComponent,
-    BotonTopComponent, 
+    BotonTopComponent,
+    ProductIdComponent, 
   ],
   imports: [
     BrowserModule,

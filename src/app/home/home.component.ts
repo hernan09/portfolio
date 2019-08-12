@@ -29,21 +29,20 @@ export class HomeComponent implements OnInit {
      ]
 
     frames=[
-      {"name":"Angular.js"},
-      {"name":"React.js"},
-      {"name":".NET"},
-      {"name":"VB.NET"},
-      {"name":"HTML 5"},
-      {"name":"CSS3"},
-      {"name":"JavaScript"},
-      {"name":"GIT"},
-      {"name":"Node.js"},
-      {"name":"Vue.js"},
-      {"name":"Mongo Db"},
-      {"name":"SQL"},
-      {"name":"Jquery"},
-      {"name":"IONIC"},
-      {"name":"Bootstrap"}
+      {"name":"Angular.js","img":"http://localhost:4200/assets/imgnes/angular.png"},
+      {"name":"React.js","img":"http://localhost:4200/assets/imgnes/react.png"},
+      {"name":".NET","img":"http://localhost:4200/assets/imgnes/net.png"},
+      {"name":"HTML 5","img":"http://localhost:4200/assets/imgnes/html.png"},
+      {"name":"CSS3","img":"http://localhost:4200/assets/imgnes/css.png"},
+      {"name":"JavaScript","img":"http://localhost:4200/assets/imgnes/js.png"},
+      {"name":"GIT","img":"http://localhost:4200/assets/imgnes/git.png"},
+      {"name":"Node.js","img":"http://localhost:4200/assets/imgnes/node.png"},
+      {"name":"Vue.js","img":"http://localhost:4200/assets/imgnes/vue.png"},
+      {"name":"Mongo Db","img":"http://localhost:4200/assets/imgnes/mongo.png"},
+      {"name":"SQL","img":"http://localhost:4200/assets/imgnes/sql.png"},
+      {"name":"Jquery","img":"http://localhost:4200/assets/imgnes/jquery.png"},
+      {"name":"IONIC","img":"http://localhost:4200/assets/imgnes/ionic.png"},
+      {"name":"Bootstrap","img":"http://localhost:4200/assets/imgnes/bootstrap.jpg"}
       ] 
   
 
@@ -71,12 +70,13 @@ export class HomeComponent implements OnInit {
       this.show = false
     }
   }  
-  
+ 
 
   scrollToElement(destino): void {
    
     destino.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
-
+   
+   
   }
 
   hora(){

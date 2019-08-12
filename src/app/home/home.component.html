@@ -1,7 +1,7 @@
 <div id="body" data-spy="scroll"data-target="#navbarSupportedContent">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbaar">
      
-     <span><strong style="color: greenyellow">{{ horario | date:'short' }}</strong></span> 
+     <span><strong style="color: greenyellow">{{ horario | date:'medium' }}</strong></span> 
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle">
       <span class="navbar-toggler-icon"></span>
@@ -10,16 +10,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(jumbo1)" >Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link hvr-underline-from-left" (click)="scrollToElement(jumbo1)" data-toggle="collapse" data-target=" .navbar-collapse.show">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(piso)">Links</a>
+          <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(piso)"data-toggle="collapse"data-target=" .navbar-collapse.show">Links</a>
         </li>
         <li class="nav-item">
-                <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(jumbo2)" >About<span class="sr-only">(current)</span></a>
+                <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(jumbo2)"data-toggle="collapse"data-target=" .navbar-collapse.show">About<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link colorLink hvr-underline-from-left"(click)="scrollToElement(footer)">Portfolio<span class="sr-only">(current)</span></a>
+            <a class="nav-link colorLink hvr-underline-from-left"(click)="scrollToElement(footer)"data-toggle="collapse"data-target=" .navbar-collapse.show">Portfolio<span class="sr-only">(current)</span></a>
         </li>
        
       </ul> 
@@ -71,16 +71,7 @@
 
         </div>
         <div #piso  class="col-md-12 col-sm-12">
-            <div class="card">
-              
-                <div class="card-body">
-                  <div id="cuadro">
-                      <img id="yo" src="../../assets/yo.jpg"  alt="">
-                  </div>
-                  <h5 class="card-title">Hernan Dario Gomez</h5>
-                  <h6 class="card-subtitle">Frontend Developer</h6>
-                </div>
-            </div>
+            
           </div>
           <div id="col2" class="col-md-12 col-sm-12">
            
@@ -126,25 +117,22 @@
             <div class="card" id="aboutme" style="width: 18rem;">
              
               <div class="card-body">
-                <table class="table table-hover">
-                
-                  <tbody>
-                    <tr (click)="showinfotec(frame.name)" class="table-light hvr-curl-top-right" *ngFor="let frame of frames">
-                      <th scope="row">Nombre</th>
-                      <td>{{frame.name}}</td>
-                    </tr>
-                   
-                  </tbody>
-                </table>
+                <div id="contenttecno" *ngFor="let frame of frames" class="hvr-skew-backward hvr-curl-top-right">
+                      <img id="loguito" src="{{frame.img}}" alt="">
+                      <p>{{frame.name}}</p>
+                </div>
+               
                
               </div>
             </div>
+           
             <hr>
             </blockquote>
           </div>
-
+ 
           <div #footer id="footer"> 
-              <button *ngIf="!show" id="fab" type="button"(click)="contact()" class="hvr-underline-from-left"><span class="icon-home"></span></button>
+              
+               <button *ngIf="!show" id="fab" type="button"(click)="contact()"><img src="../../assets/css/user.png"/><p>Contactactame</p></button> 
               <blockquote class="blockquote text-center">
                   <div *ngIf="show" id="contactos">
                       <span class="icon-gmail"></span>
@@ -154,6 +142,7 @@
                 
                   </div>
                  <img src="https://www.freelogodesign.org/file/app/client/thumb/e1dcdd78-1bfb-482b-a3d1-4c1af15349b8_200x200.png?1563561635271" id="logofot">
+   
                 </blockquote>
                
           </div>
