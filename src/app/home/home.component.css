@@ -237,7 +237,7 @@ blockquote{
   position: fixed;
   top: 95%;
   left: 0;
-  width: 30%;
+  width: 40%;
   max-width:200px;
   margin: auto;
   display: flex;
@@ -254,6 +254,7 @@ blockquote{
 }
 #contactos>span{
   cursor: pointer;
+  font-size: 1.8rem;
 }
 #logofot{
   margin-top: 30px;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+//estyo me sirve para hacer enrutado ancla con animacion en los links
 import * as smoothscroll from "smoothscroll-polyfill";
 import { NgsRevealConfig } from 'ng-scrollreveal';
 

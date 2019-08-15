@@ -1,4 +1,4 @@
-<div id="body" data-spy="scroll"data-target="#navbarSupportedContent">
+<div id="body" data-spy="scroll"data-target="#navbarSupportedContent" >
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbaar">
      
      <span><strong style="color: greenyellow">{{ horario | date:'medium' }}</strong></span> 
@@ -92,7 +92,7 @@
           </div>
           <div #jumbo2 class="jumbotron">
               <blockquote class="blockquote text-center">
-             
+               
               <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
               <hr class="my-4">
               <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -127,6 +127,18 @@
             </div>
            
             <hr>
+            <div class="form-group">
+              <fieldset>
+                <label class="control-label" for="readOnlyInput">Ingrese su Email</label>
+                <input class="form-control" id="readOnlyInput" name="email" type="text" placeholder="Ingrese su Email por favor" >
+                <label for="exampleTextarea">Ingrese un comentario</label>
+                <textarea class="form-control" name="texto" id="exampleTextarea" rows="3" placeholder="Ingrese algun comentario por favor :)"></textarea>
+                <button type="button" class="btn btn-success">Success</button>
+              </fieldset>
+              <fieldset>
+               
+              </fieldset>
+            </div>
             </blockquote>
           </div>
  
