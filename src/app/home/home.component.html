@@ -127,19 +127,22 @@
             </div>
            
             <hr>
-            <div class="form-group">
-              <fieldset>
-                <label class="control-label" for="readOnlyInput">Ingrese su Email</label>
-                <input class="form-control" id="readOnlyInput" name="email" type="text" placeholder="Ingrese su Email por favor" >
-                <label for="exampleTextarea">Ingrese un comentario</label>
-                <textarea class="form-control" name="texto" id="exampleTextarea" rows="3" placeholder="Ingrese algun comentario por favor :)"></textarea>
-                <button type="button" class="btn btn-success">Success</button>
-              </fieldset>
-              <fieldset>
-               
-              </fieldset>
-            </div>
+            <h2 style="color: gray" id="escri"><strong style="color: greenyellow">E</strong>scribeme un comentario</h2>
+           
             </blockquote>
+            <!-- con novalidate se activa la propiedad invalid en el boton accediendo por el formgroup "user" -->
+            <form  id="formu" [formGroup]="user" novalidate (ngSubmit)="enviarmail()">
+              <fieldset>
+                <label style="text-align: start" class="control-label" for="readOnlyInput">Ingrese su Email</label>
+                <input class="form-control " formControlName="email" id="readOnlyInput" type="text" placeholder="Ingrese su Email" >
+                <div class="error"*ngIf="user.get('email').hasError('required') && user.get('email').touched">Email requerido...</div>
+                <br>
+                <label for="exampleTextarea">Comentario</label>
+                <textarea class="form-control " name="texto"formControlName="texto" id="exampleTextarea" rows="3" ></textarea>
+                <div class="error"*ngIf="user.get('texto').hasError('required') && user.get('texto').touched">Texto requerido...</div>
+                <button type="submit" style="width: 100%; margin-top: 10%" class="btn " [disabled]="user.invalid" >Enviar</button>
+              </fieldset>
+            </form>
           </div>
  
           <div #footer id="footer"> 
@@ -153,8 +156,10 @@
                       <span class="icon-facebook"></span>
                 
                   </div>
-                 <img src="https://www.freelogodesign.org/file/app/client/thumb/e1dcdd78-1bfb-482b-a3d1-4c1af15349b8_200x200.png?1563561635271" id="logofot">
-   
+                  <!-- https://www.freelogodesign.org/file/app/client/thumb/e1dcdd78-1bfb-482b-a3d1-4c1af15349b8_200x200.png?1563561635271 -->
+                 
+                  <img src="../../assets/imgnes/logoHernan.png" id="logofot">
+           
                 </blockquote>
                
           </div>

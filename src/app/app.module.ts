@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgsRevealModule} from 'ngx-scrollreveal';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,8 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HomeComponent,
     BotonTopComponent,
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -29,8 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     BrowserAnimationsModule,
     NgsRevealModule,
-    
-    
+    ReactiveFormsModule,
   ],
   providers: [ ],
   bootstrap: [AppComponent]
