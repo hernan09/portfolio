@@ -1,4 +1,7 @@
-<div id="body" data-spy="scroll"data-target="#navbarSupportedContent" >
+<div class="loading" *ngIf="load">
+  <h1 text-center>Enviando mail a su cuenta de correo.....</h1>
+</div>
+<div id="body" *ngIf="!load" data-spy="scroll"data-target="#navbarSupportedContent" >
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbaar">
      
      <span><strong style="color: greenyellow">{{ horario | date:'medium' }}</strong></span> 
@@ -130,6 +133,7 @@
             <h2 style="color: gray" id="escri"><strong style="color: greenyellow">E</strong>scribeme un comentario</h2>
            
             </blockquote>
+           
             <!-- con novalidate se activa la propiedad invalid en el boton accediendo por el formgroup "user" -->
             <form  id="formu" [formGroup]="user" novalidate (ngSubmit)="enviarmail()">
               <fieldset>

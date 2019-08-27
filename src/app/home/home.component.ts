@@ -21,12 +21,14 @@ import { error } from 'util';
 })
 export class HomeComponent implements OnInit {
   jquery: any;
+  load: boolean = false;
   aboutMostrar: boolean = false;
   horario = Date.now();
   email: any;
   texto: any;
   user: FormGroup;
   show2: boolean = true;
+  mailStorages:string;
   links = [
     {"link": "https://github.com/hernan09/React-App-ShowVideo","name":"Wow Videos","frame":"React.js"},
     {"link": "https://github.com/hernan09/ionic-animal","name":"sonidos de animales","frame":"Ionic"},
@@ -36,7 +38,7 @@ export class HomeComponent implements OnInit {
      ]
 
     frames = [
-      {"name": "Angular.js","img":"http://localhost:4200/assets/imgnes/angular.png"},
+      {"name": "Angular.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
       {"name": "React.js","img":"http://localhost:4200/assets/imgnes/react.png"},
       {"name": ".NET","img":"http://localhost:4200/assets/imgnes/net.png"},
       {"name": "HTML 5","img":"http://localhost:4200/assets/imgnes/html.png"},
@@ -56,9 +58,10 @@ export class HomeComponent implements OnInit {
 
 
   constructor( private config: NgsRevealConfig , public http: HttpClient) {
+      this.mailStorages = localStorage.getItem('mailStorage');
       //se generan variables por el formGroup y cada nombre de input "formcontrolname" se instancian con su formcontrol y luego se validan con el validators (campo vacio y minimo de 2 letras en este caso)
       this.user = new FormGroup({
-       email: new FormControl('', [Validators.required, Validators.minLength(4)]),
+       email: new FormControl( this.mailStorages , [Validators.required, Validators.minLength(4)]),
        texto: new FormControl('', Validators.required)
       });
 
@@ -83,9 +86,18 @@ export class HomeComponent implements OnInit {
     }
   }
   enviarmail() {
-
+   this.load = true;
    const mailEnviado = this.user.value;
    console.log(mailEnviado);
+
+    localStorage.setItem('mailStorage', mailEnviado.email);
+
+   this.http.post('https://senmail.herokuapp.com/mailer', mailEnviado).subscribe(data => {
+     console.log('data enviada', data);
+     if (data) {
+       this.load = false;
+     }
+   });
   }
 
   scrollToElement(destino): void {
@@ -111,7 +123,6 @@ export class HomeComponent implements OnInit {
   }
 
   aboutmeshow() {
-
     if (this.aboutMostrar === false) {
       this.aboutMostrar = true;
     } else {
