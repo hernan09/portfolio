@@ -9,7 +9,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -51,17 +51,24 @@
             <blockquote class="blockquote text-center">
                 <p class="mb-0">Desarrollador FrontEnd apasionado por la tecnologia web</p>
                 <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                <button type="button" class="btn btn-outline-dark hvr-underline-from-left ">Success</button>
+                <button type="button" class="btn btn-outline-dark hvr-underline-from-left  pmd-ripple-effect">Success</button>
               </blockquote>
             
           </div>
         </div>
         <div id="header">
-
+          <app-carrousel></app-carrousel>
         </div>
         <div #jumbo1  class="jumbotron" >
+         
+           
             <blockquote class="blockquote text-center">
             <h1 class="display-3">Desarrollador Frontend</h1>
+            <div class="row" id="cartitas">
+                <div class="col s12 m6">
+                </div>
+                  
+              </div>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -104,13 +111,18 @@
               </p>
               </blockquote> 
           </div>
+          <div #jumbo2 class="jumbotron" id="matrix">
+              <blockquote class="blockquote text-center">
+               
+              </blockquote> 
+          </div>
           <div #myTabContent id="myTabContent"  class="jumbotron">
             <blockquote class="blockquote text-center">
             <h1 class="display-3">Development!</h1>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-           
+              
             </blockquote>
           </div>
           <div #myTabContent2 id="myTabContent2"  class="jumbotron">
@@ -148,10 +160,10 @@
               </fieldset>
             </form>
           </div>
- 
+             
           <div #footer id="footer"> 
               
-               <button *ngIf="!show" id="fab" type="button"(click)="contact()"><img src="../../assets/css/user.png"/><p>Contactactame</p></button> 
+               <button *ngIf="!show" id="fab"  type="button"(click)="contact()"><img src="../../assets/css/user.png"/><p>Contactactame</p></button> 
               <blockquote class="blockquote text-center">
                   <div *ngIf="show" id="contactos">
                       <span class="icon-gmail"></span>

@@ -10,6 +10,8 @@ import { NgsRevealModule} from 'ngx-scrollreveal';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import { CarrouselComponent } from './carrousel/carrousel.component';
 
 
 
@@ -20,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HomeComponent,
     BotonTopComponent,
+    CarrouselComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,8 +32,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     NgsRevealModule,
     ReactiveFormsModule,
+    NgZorroAntdModule
   ],
-  providers: [ ],
+  providers: [{ provide: NZ_I18N, useValue: en_US}],
   bootstrap: [AppComponent]
 })
 
