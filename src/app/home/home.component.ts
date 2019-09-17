@@ -4,6 +4,7 @@ import * as smoothscroll from "smoothscroll-polyfill";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgsRevealConfig } from 'ng-scrollreveal';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import tippy from 'tippy.js'
 
  //
 
@@ -67,11 +68,10 @@ export class HomeComponent implements OnInit {
 
       smoothscroll.polyfill();
 
-
       config.duration = 1000;
       config.easing = 'cubic-bezier(0.645, 0.045, 0.355, 1)';
 
-      setInterval(() => {console.log(this.horario), this.hora()}, 1000);
+      setInterval(() => {console.log(this.horario), this.hora(); }, 1000);
    }
 
   contact() {
