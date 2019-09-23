@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 .navbar {
   position: fixed;
   width: 100%;
@@ -132,16 +133,32 @@ h1{
     margin-left: 8%;
     margin-top: 8%;
 }
+
 #cuadro{
     border-radius: 100%;
     width: 200px;
     height: 200px;
     border: solid 10px black;
 }
+#contenedorCarta{
+  width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+#cartitaaa{
+  max-width: 150px;
+  max-height: 150px;
+  margin: 5px;
+  
+}
 h1{
     text-align: center;
     color: white;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     margin-top: 10%;
     font-size: 2.5rem;
     
@@ -149,7 +166,7 @@ h1{
 
 .btn{
     margin-top: 5%;
-    width: 30%;
+    width: 20%;
     margin-bottom: 2%;
     border: none;
     background-color: black;
@@ -219,9 +236,11 @@ blockquote>h1>strong{
   background-color: black;
   color: white;
   width: 100%;
-  height: 220px;
+  height: 300px;
   opacity: 0.9;
 }
+
+
 
 blockquote{
  position: relative;
@@ -229,14 +248,12 @@ blockquote{
  
 }
 #proyec{
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   margin-bottom: 50px;
   font-size: 2.5rem;
   color: gray;
 }
-.bverde{
- 
-}
+
 .bazul{
   color: greenyellow !important;
 }
@@ -336,11 +353,13 @@ blockquote{
 }
 #formu{
   margin-top: 10%;
-  max-width: 40%;
+  max-width: 30%;
+  min-width:300px ;
   margin: auto;
 }
 #escri{
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  
 }
 fieldset {
   min-width: 0;
@@ -363,13 +382,16 @@ fieldset {
 .loading>h1{
   position: fixed;
   top: 70%;
-  
+  -webkit-animation: text-blur-out 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
+	 animation: text-blur-out 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
+
 }
 @media(min-width:765px){
   .loading>h1{
     position: fixed;
     top: 70%;
-    left: 20%;
+    left: 12%;
+    font-size: 2rem;
     
   }
 }
@@ -378,8 +400,8 @@ fieldset {
   .loading>h1{
     position: fixed;
     top: 70%;
-    left: 24%;
-    font-size: 3rem;
+    left: 16%;
+    font-size: 2.3rem;
     
   }
 }
@@ -387,8 +409,8 @@ fieldset {
   .loading>h1{
     position: fixed;
     top: 70%;
-    left: 25%;
-    font-size: 4rem;
+    left: 20%;
+    font-size: 3rem;
     
   }
 }
@@ -396,20 +418,26 @@ fieldset {
   .loading>h1{
     position: fixed;
     top: 70%;
-    left: 9%;
-    font-size: 2rem;
+    left: 2%;
+    font-size: 1.5rem;
     
+  }
+  #escri{
+   font-size: 1.5rem;
+   
   }
 }
 @media(max-width:376px){
   .loading>h1{
     position: fixed;
     top: 70%;
-    left: 7%;
-    font-size: 1.8rem;
+    left: 2%;
+    font-size: 1.2rem;
     
   }
 }
+
+
 
 fieldset>textarea{
   resize: none;
@@ -467,19 +495,19 @@ fieldset>textarea{
   .display-3{
     margin-top: 10%;
     color: gray;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 2rem;
    
   }
   #proyec{
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     margin-bottom: 50px;
     font-size: 2rem;
     color: gray;
   }
   #ulink{
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
   }
 }
@@ -700,3 +728,26 @@ fieldset>textarea{
     opacity: 1;
   }
 }
+/*animacion del texto del loading*/
+
+@-webkit-keyframes text-blur-out {
+  0% {
+    -webkit-filter: blur(0.01);
+            filter: blur(0.01);
+  }
+  100% {
+    -webkit-filter: blur(12px) opacity(0%);
+            filter: blur(12px) opacity(0%);
+  }
+}
+@keyframes text-blur-out {
+  0% {
+    -webkit-filter: blur(0.01);
+            filter: blur(0.01);
+  }
+  100% {
+    -webkit-filter: blur(12px) opacity(0%);
+            filter: blur(12px) opacity(0%);
+  }
+}
+

@@ -73,7 +73,7 @@
             <hr class="my-4">
             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
             <p class="lead">
-              <a class="btn btn-outline-dark hvr-underline-from-left" href="#" role="button">Learn more</a>
+              <a class="btn btn-outline-dark hvr-underline-from-left" href="#" role="button">More</a>
             </p>
             </blockquote>
         </div>
@@ -107,7 +107,7 @@
               <hr class="my-4">
               <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
               <p class="lead">
-                <button [ngClass]="{'classabout':aboutMostrar}"  class="btn btn-outline-dark hvr-underline-from-left"(click)="aboutmeshow()">About Me</button>
+                <button [ngClass]="{'classabout':aboutMostrar}"  class="btn btn-outline-dark hvr-underline-from-left"(click)="aboutmeshow()">About</button>
               </p>
               </blockquote> 
           </div>
@@ -129,7 +129,15 @@
             <blockquote class="blockquote text-center">
             <h1 class="display-3"><strong class="bazul">T</strong>ecnologias</h1>
             <hr>
-            <div class="card" id="aboutme" style="width: 18rem;">
+            <div id="contenedorCarta">
+                <nz-card id="cartitaaa" class="hvr-curl-top-right" *ngFor="let frame of frames" nzHoverable style="width:240px" [nzCover]="coverTemplate">
+                    <nz-card-meta nzTitle="{{frame.name}}" nzDescription="{{frame.name}}"></nz-card-meta>
+    
+                </nz-card>
+            </div>
+            
+              
+            <!-- <div class="card" id="aboutme" style="width: 18rem;">
              
               <div class="card-body">
                 <div id="contenttecno" *ngFor="let frame of frames" class="hvr-skew-backward hvr-curl-top-right">
@@ -139,7 +147,7 @@
                
                
               </div>
-            </div>
+            </div> -->
            
             <hr>
             <h2 style="color: gray" id="escri"><strong style="color: greenyellow">E</strong>scribeme un comentario</h2>
@@ -162,7 +170,7 @@
           </div>
              
           <div #footer id="footer"> 
-              
+           
                <button *ngIf="!show" id="fab"  type="button"(click)="contact()"><img src="../../assets/css/user.png"/><p>Contactactame</p></button> 
               <blockquote class="blockquote text-center">
                   <div *ngIf="show" id="contactos">
