@@ -40,6 +40,12 @@ h1{
   height: 100%;
   
 }
+hr{
+  box-sizing: content-box;
+  height: 0;
+  border: solid 1px greenyellow;
+  box-shadow: #2098D1 0px 2px 0px 0px;
+}
 #log{
   width: 80px;
   height: 80px;
