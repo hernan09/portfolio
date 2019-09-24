@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { CarrouselComponent } from './carrousel/carrousel.component';
+import { CartasComponent } from './cartas/cartas.component';
 
 
 
@@ -23,6 +24,7 @@ import { CarrouselComponent } from './carrousel/carrousel.component';
     HomeComponent,
     BotonTopComponent,
     CarrouselComponent,
+    CartasComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ import { error } from 'util';
 
 
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -21,6 +22,13 @@ import { error } from 'util';
   providers: [ NgsRevealConfig ]
 })
 export class HomeComponent implements OnInit {
+  gridStyle = {
+    width: '25%',
+    textAlign: 'center',
+    margin: "auto"
+  };
+
+
   jquery: any;
   load: boolean = false;
   aboutMostrar: boolean = false;
@@ -39,20 +47,22 @@ export class HomeComponent implements OnInit {
      ]
 
     frames = [
-      {"name": "Angular.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "React.js","img":"http://localhost:4200/assets/imgnes/react.png"},
-      {"name": ".NET","img":"http://localhost:4200/assets/imgnes/net.png"},
-      {"name": "HTML 5","img":"http://localhost:4200/assets/imgnes/html.png"},
-      {"name": "CSS3","img":"http://localhost:4200/assets/imgnes/css.png"},
-      {"name": "JavaScript","img":"http://localhost:4200/assets/imgnes/js.png"},
-      {"name": "GIT","img":"http://localhost:4200/assets/imgnes/git.png"},
-      {"name": "Node.js","img":"http://localhost:4200/assets/imgnes/node.png"},
-      {"name": "Vue.js","img":"http://localhost:4200/assets/imgnes/vue.png"},
-      {"name": "Mongo Db","img":"http://localhost:4200/assets/imgnes/mongo.png"},
-      {"name": "SQL","img":"http://localhost:4200/assets/imgnes/sql.png"},
-      {"name": "Jquery","img":"http://localhost:4200/assets/imgnes/jquery.png"},
-      {"name": "IONIC","img":"http://localhost:4200/assets/imgnes/ionic.png"},
-      {"name": "Bootstrap","img":"http://localhost:4200/assets/imgnes/bootstrap.jpg"}
+      {"id":1,"name": "Angular.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":2,"name": "React.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":3,"name": ".NET","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":4,"name": "HTML 5","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":5,"name": "CSS3","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":6,"name": "JavaScript","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":7,"name": "GIT","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":8,"name": "Node.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":9,"name": "Vue.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":10,"name": "Mongo","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":11,"name": "SQL","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":12,"name": "Jquery","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":13,"name": "IONIC","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":14,"name": "Bootstrap","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":15,"name": "Docker","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
+      {"id":16,"name": "Typescript","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"}
       ];
 
   show: boolean = false;
@@ -133,6 +143,16 @@ export class HomeComponent implements OnInit {
     console.log( name );
   }
   ngOnInit() {
+  }
+
+  dandoMensaje(event) {
+    const date = new Date();
+    const hour = date.getHours();
+    const minutes = date.getMinutes();
+    const second = date.getSeconds();
+
+    console.log(hour + ':' + minutes + ':' + second);
+    console.table(this.frames);
   }
 
 }

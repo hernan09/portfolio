@@ -234,9 +234,7 @@ blockquote{
   font-size: 2.5rem;
   color: gray;
 }
-.bverde{
- 
-}
+
 .bazul{
   color: greenyellow !important;
 }
@@ -310,6 +308,15 @@ blockquote{
   margin: auto;
   
 }
+#imagencita{
+  width: 30px;
+  height: 20px;
+}
+[nz-button] {
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+
 #contactos>span{
   cursor: pointer;
   font-size: 1.8rem;

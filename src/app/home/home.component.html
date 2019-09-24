@@ -128,9 +128,14 @@
           <div #myTabContent2 id="myTabContent2"  class="jumbotron">
             <blockquote class="blockquote text-center">
             <h1 class="display-3"><strong class="bazul">T</strong>ecnologias</h1>
-            <hr>
-            <div class="card" id="aboutme" style="width: 18rem;">
-             
+              <br>
+            <nz-card nzTitle="Tecnologias">
+              <div id="cartitass" class="hvr-curl-top-right" *ngFor="let frame of frames" nz-card-grid [ngStyle]="gridStyle">
+              <card [name]="frame.name" (mostrar)="dandoMensaje(frame.img)" [id]=frame.id [img]="frame.img"></card>
+              </div>
+              
+            </nz-card>
+            <!-- <div class="card" id="aboutme" style="width: 18rem;"> 
               <div class="card-body">
                 <div id="contenttecno" *ngFor="let frame of frames" class="hvr-skew-backward hvr-curl-top-right">
                       <img id="loguito" src="{{frame.img}}" alt="">
@@ -139,9 +144,9 @@
                
                
               </div>
-            </div>
+            </div> -->
            
-            <hr>
+             <br>
             <h2 style="color: gray" id="escri"><strong style="color: greenyellow">E</strong>scribeme un comentario</h2>
            
             </blockquote>
