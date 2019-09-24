@@ -51,7 +51,7 @@
             <blockquote class="blockquote text-center">
                 <p class="mb-0">Desarrollador FrontEnd apasionado por la tecnologia web</p>
                 <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                <button type="button" class="btn btn-outline-dark hvr-underline-from-left  pmd-ripple-effect">Success</button>
+                <button type="button" class="btn btn-outline-dark hvr-underline-from-left  pmd-ripple-effect">More</button>
               </blockquote>
             
           </div>
@@ -132,7 +132,7 @@
             <div id="contenedorCarta">
                 <nz-card id="cartitaaa" class="hvr-curl-top-right" *ngFor="let frame of frames" nzHoverable style="width:240px" [nzCover]="coverTemplate">
                     <nz-card-meta nzTitle="{{frame.name}}" nzDescription="{{frame.name}}"></nz-card-meta>
-    
+                    <img id="imgcartitaa" src="{{frame.img}}" alt="">
                 </nz-card>
             </div>
             

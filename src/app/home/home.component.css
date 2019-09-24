@@ -43,8 +43,12 @@ h1{
 hr{
   box-sizing: content-box;
   height: 0;
-  border: solid 1px greenyellow;
-  box-shadow: #2098D1 0px 2px 0px 0px;
+  border: solid 1px gray;
+  box-shadow: black 0px 0px 2px 0px;
+}
+#imgcartitaa{
+  width: 40px;
+  height: 40px;
 }
 #log{
   width: 80px;
@@ -153,6 +157,11 @@ hr{
     justify-content: space-around;
     flex-wrap: wrap;
     overflow-y: scroll;
+    background-image: url(../../assets/web-developer.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 #cartitaaa{
