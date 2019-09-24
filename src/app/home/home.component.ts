@@ -4,7 +4,7 @@ import * as smoothscroll from "smoothscroll-polyfill";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgsRevealConfig } from 'ng-scrollreveal';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import tippy from 'tippy.js'
+
 
  //
 
@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   user: FormGroup;
   show2: boolean = true;
   mailStorages:string;
+  alertCard: boolean = false ;
   links = [
     {"link": "https://github.com/hernan09/React-App-ShowVideo","name":"Wow Videos","frame":"React.js"},
     {"link": "https://github.com/hernan09/ionic-animal","name":"sonidos de animales","frame":"Ionic"},
@@ -85,6 +86,14 @@ export class HomeComponent implements OnInit {
       this.show = false;
     }
   }
+
+   isValidEmail(mail) {
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(mail);
+  }
+
+  ocultarAlerta() {
+    setTimeout(() => {this.alertCard = false }, 3000);
+  }
   enviarmail() {
    this.load = true;
    const mailEnviado = this.user.value;
@@ -96,6 +105,8 @@ export class HomeComponent implements OnInit {
      console.log('data enviada', data);
      if (data) {
        this.load = false;
+       this.alertCard = true;
+       this.ocultarAlerta();
      }
    });
   }
@@ -121,7 +132,7 @@ export class HomeComponent implements OnInit {
     }
     return this.horario;
   }
-
+   /*
   aboutmeshow() {
     if (this.aboutMostrar === false) {
       this.aboutMostrar = true;
@@ -129,6 +140,7 @@ export class HomeComponent implements OnInit {
       this.aboutMostrar = false;
     }
   }
+  */
   showinfotec(name) {
     console.log( name );
   }

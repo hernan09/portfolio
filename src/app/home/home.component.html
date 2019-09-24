@@ -31,6 +31,15 @@
   
   </nav>
       <!---->
+      <nz-alert *ngIf="alertCard"
+      nzType="success"
+      nzCloseable
+      nzMessage="Hecho"
+      nzDescription="Email enviado correctamente."
+      nzShowIcon
+      [nzBanner]="true"
+    >
+    </nz-alert>
       <div class="content-page" id="bodycont" data-spy="scroll" data-target="#navbaar" data-offset="0">
         <div class="row">
             
@@ -56,6 +65,7 @@
             
           </div>
         </div>
+    
         <div id="header1">
           <app-carrousel></app-carrousel>
         </div>
@@ -92,7 +102,7 @@
                       <h5 for="">{{link.name}}</h5>
                    <a href="{{link.link}}">{{link.link}}</a>
                    <p>{{link.frame}}</p>
-                   <hr>
+                   <br>
                       
                 </li>
               </ul>
@@ -107,7 +117,7 @@
               <br>
               <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
               <p class="lead">
-                <button [ngClass]="{'classabout':aboutMostrar}"  class="btn btn-outline-dark hvr-underline-from-left"(click)="aboutmeshow()">About</button>
+                <!-- <button [ngClass]="{'classabout':aboutMostrar}"  class="btn btn-outline-dark hvr-underline-from-left"(click)="aboutmeshow()">About</button> -->
               </p>
               </blockquote> 
           </div>
@@ -158,7 +168,7 @@
             <form  id="formu" [formGroup]="user" novalidate (ngSubmit)="enviarmail()">
               <fieldset>
                 <label style="text-align: start" class="control-label" for="readOnlyInput">Ingrese su Email</label>
-                <input class="form-control " formControlName="email" id="readOnlyInput" type="text" placeholder="Ingrese su Email" >
+                <input class="form-control " formControlName="email" id="readOnlyInput" type="email" placeholder="Ingrese su Email" >
                 <div class="error"*ngIf="user.get('email').hasError('required') && user.get('email').touched">Email requerido...</div>
                 <br>
                 <label for="exampleTextarea">Comentario</label>

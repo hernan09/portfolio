@@ -26,6 +26,42 @@
   left: 0;
  
 }
+nz-alert{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  z-index: 10000000000000000000;
+  -webkit-animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/*keyframe del alerta*/
+@-webkit-keyframes fade-in-left {
+  0% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-left {
+  0% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*se termina aca el keyframe*/
 h1{
   color: gray !important;
 }
@@ -324,7 +360,7 @@ blockquote{
 
 #contactos{
   position: fixed;
-  top: 95%;
+  top: 90%;
   left: 0;
   width: 40%;
   max-width:200px;
@@ -433,7 +469,7 @@ fieldset {
   .loading>h1{
     position: fixed;
     top: 70%;
-    left: 2%;
+    left: 1%;
     font-size: 1.5rem;
     
   }
