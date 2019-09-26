@@ -144,6 +144,10 @@ hr{
 	    animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     
 }
+
+
+
+
 #ulink{
   padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
@@ -156,6 +160,12 @@ hr{
  }
  #ulali>li{
    list-style: none;
+ }
+
+ @media(max-width:376px){
+   #ulink>li>a{
+     font-size: 0.98rem;
+   }
  }
 .card-header{
     text-align: center;
@@ -296,7 +306,6 @@ blockquote>h1>strong{
 blockquote{
  position: relative;
 
- 
 }
 #proyec{
   font-family: 'Quicksand', sans-serif;
@@ -323,8 +332,6 @@ blockquote{
   border: none;
   z-index: 9999999999999;
 
-  
-  
 }
 #fab>img{
   width: 50px;
@@ -382,9 +389,9 @@ blockquote{
   cursor: pointer;
   font-size: 1.8rem;
 }
+
 #logofot{
   margin-top: 30px;
- 
 }
 
 

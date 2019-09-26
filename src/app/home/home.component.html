@@ -100,7 +100,7 @@
               <ul id="ulink">
                 <li *ngFor="let link of links">
                       <h5 for="">{{link.name}}</h5>
-                   <a href="{{link.link}}">{{link.link}}</a>
+                   <a  href="{{link.link}}">{{link.link}}</a>
                    <p>{{link.frame}}</p>
                    <br>
                       
@@ -140,9 +140,10 @@
             <h1 class="display-3"><strong class="bazul">T</strong>ecnologias</h1>
             <hr>
             <div id="contenedorCarta">
-                <nz-card id="cartitaaa" class="hvr-curl-top-right" *ngFor="let frame of frames" nzHoverable style="width:240px" [nzCover]="coverTemplate">
+                <nz-card id="cartitaaa" class="hvr-curl-top-right" *ngFor="let frame of frames; index as id" nzHoverable style="width:240px" [nzCover]="coverTemplate">
                     <nz-card-meta nzTitle="{{frame.name}}" nzDescription="{{frame.name}}"></nz-card-meta>
                     <img id="imgcartitaa" src="{{frame.img}}" alt="">
+                    <button nz-button nzType="primary"  [routerLink]="['/tecnologi', id]">View</button>
                 </nz-card>
             </div>
             
