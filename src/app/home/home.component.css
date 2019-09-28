@@ -76,11 +76,43 @@ h1{
   height: 100%;
   
 }
-hr{
+#hr1{
   box-sizing: content-box;
-  height: 0;
-  border: solid 1px gray;
+  height: 30px;
+  margin: 0;
+  /*border: solid 1px greenyellow;*/
   box-shadow: black 0px 0px 2px 0px;
+  /* background-color: red; */
+  /*background-image: url(../../assets/imgnes/baner.jpg);
+  background-position: center;
+  background-size: cover;
+  /* border-bottom: darkseagreen; */
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
+  border-top-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+}
+
+#hr2{
+  box-sizing: content-box;
+  height: 30px;
+  margin: 0;
+  /*border: solid 1px greenyellow;*/
+  box-shadow: black 0px 0px 2px 0px;
+  /* background-color: red; 
+  background-image: url(../../assets/imgnes/baner.jpg);
+  background-position: center;
+  background-size: cover;
+  /* border-bottom: darkseagreen; */
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  border-bottom-right-radius: 100%;
+ border-top-left-radius: 100%;
 }
 #imgcartitaa{
   width: 40px;
@@ -297,8 +329,8 @@ blockquote>h1>strong{
   background-color: black;
   color: white;
   width: 100%;
-  height: 300px;
-  opacity: 0.9;
+  height: 250px;
+  opacity: 0.8;
 }
 
 

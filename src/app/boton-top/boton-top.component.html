@@ -1,10 +1,16 @@
 
 <div id="contenedor">
-    <div *ngIf="product">
-        <h3>{{ product.name }}</h3>
+    <div id="framework" *ngIf="product">
+        <blockquote class="blockquote text-center">
+          <h3>{{ product.name }}</h3>
+        <br>
         <img style="width: 200px; height: 200px;margin: auto" src="{{product.img}}" alt="">
         <br>
-        <button nz-button nzType="default"[routerLink]="['/']">Volver</button>
+        <button nz-button nzType="danger"[routerLink]="['/']">Volver</button>
+         <h4>{{product.descripcion}}</h4>
+        </blockquote>
+        
      </div> 
+
 </div>
   

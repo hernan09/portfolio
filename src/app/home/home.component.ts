@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 // estyo me sirve para hacer enrutado ancla con animacion en los links
-import * as smoothscroll from "smoothscroll-polyfill";
+import * as smoothscroll from 'smoothscroll-polyfill';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgsRevealConfig } from 'ng-scrollreveal';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
-
- //
-
-
+import { Router , Event , NavigationStart, NavigationEnd} from '@angular/router';
 import * as $ from 'jquery';
 import { error } from 'util';
+import { from } from 'rxjs';
+import { IfStmt } from '@angular/compiler';
+
 
 
 
@@ -25,11 +24,8 @@ export class HomeComponent implements OnInit {
   load: boolean = false;
   aboutMostrar: boolean = false;
   horario = Date.now();
-  email: any;
-  texto: any;
-  user: FormGroup;
+  user: any;
   show2: boolean = true;
-  mailStorages:string;
   alertCard: boolean = false ;
   links = [
     {"link": "https://github.com/hernan09/React-App-ShowVideo","name":"Wow Videos","frame":"React.js"},
@@ -40,32 +36,26 @@ export class HomeComponent implements OnInit {
      ]
 
     frames = [
-      {"name": "Angular.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "React.js","img":"https://cdn.worldvectorlogo.com/logos/react.svg"},
+      {"name": "Angular.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "React.js","img":"https://cdn.worldvectorlogo.com/logos/react.svg","descripcion":"Amplia experiencia con este fantastico frameworks "},
       {"name": ".NET","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "HTML 5","img":"https://cdn.worldvectorlogo.com/logos/html5.svg"},
-      {"name": "CSS3","img":"https://cdn.worldvectorlogo.com/logos/css-3.svg"},
-      {"name": "JavaScript","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "GIT","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "Node.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "Vue.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "Mongo Db","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "SQL","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "Jquery","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "IONIC","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"},
-      {"name": "Bootstrap","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png"}
+      {"name": "HTML 5","img":"https://cdn.worldvectorlogo.com/logos/html5.svg","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "CSS3","img":"https://cdn.worldvectorlogo.com/logos/css-3.svg","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "JavaScript","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "GIT","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "Node.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "Vue.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "Mongo Db","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "SQL","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "Jquery","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "IONIC","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks "},
+      {"name": "Bootstrap","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks "}
       ];
 
   show: boolean = false;
 
 
-  constructor( private config: NgsRevealConfig , public http: HttpClient) {
-      this.mailStorages = localStorage.getItem('mailStorage');
-      //se generan variables por el formGroup y cada nombre de input "formcontrolname" se instancian con su formcontrol y luego se validan con el validators (campo vacio y minimo de 2 letras en este caso)
-      this.user = new FormGroup({
-       email: new FormControl( this.mailStorages , [Validators.required, Validators.minLength(4)]),
-       texto: new FormControl('', Validators.required)
-      });
+  constructor( private config: NgsRevealConfig , public http: HttpClient, public router: Router) {
 
       smoothscroll.polyfill();
 
@@ -73,6 +63,14 @@ export class HomeComponent implements OnInit {
       config.easing = 'cubic-bezier(0.645, 0.045, 0.355, 1)';
 
       setInterval(() => {console.log(this.horario), this.hora(); }, 1000);
+
+      this.router.events.subscribe((routerEvent: Event) => {
+          if (routerEvent instanceof NavigationStart) {
+                  this.load = true;
+          } else if (routerEvent instanceof NavigationEnd) {
+                  this.load = false;
+          }
+      });
    }
 
   contact() {
@@ -92,11 +90,12 @@ export class HomeComponent implements OnInit {
   }
 
   ocultarAlerta() {
-    setTimeout(() => {this.alertCard = false }, 3000);
+    setTimeout(() => {this.alertCard = false; }, 3000);
   }
-  enviarmail() {
+  
+  enviarmail(event) {
    this.load = true;
-   const mailEnviado = this.user.value;
+   const mailEnviado = event.value;
    console.log(mailEnviado);
 
     localStorage.setItem('mailStorage', mailEnviado.email);

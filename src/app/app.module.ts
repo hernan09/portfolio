@@ -12,7 +12,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { CarrouselComponent } from './carrousel/carrousel.component';
+import { FormComponent } from './form/form.component';
+/*
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatRippleModule
+} from '@angular/material';
 
+*/
 
 
 
@@ -23,6 +32,7 @@ import { CarrouselComponent } from './carrousel/carrousel.component';
     HomeComponent,
     BotonTopComponent,
     CarrouselComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,

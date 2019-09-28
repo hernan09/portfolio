@@ -1,0 +1,19 @@
+<form nz-form [formGroup]="user" class="login-form"(ngSubmit)="enviarmail()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Email!">
+        <nz-input-group nzPrefixIcon="user">
+          <input type="email" nz-input formControlName="email" placeholder="Email"/>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control  nzErrorTip="Please write something here!">
+            <textarea [nzAutosize]="{ minRows: 2, maxRows: 6 }" formControlName="texto" nz-input rows="4" placeholder="write any thing"></textarea>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button class="login-form-button" [disabled]="user.invalid"  [nzType]="'primary'" >Log in</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>

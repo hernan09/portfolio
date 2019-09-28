@@ -128,8 +128,8 @@
           </div>
           <div #myTabContent id="myTabContent"  class="jumbotron">
             <blockquote class="blockquote text-center">
-            <h1 class="display-3"><strong class="bvderde">D</strong>evelopmen!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <h1 class="display-3"><strong class="bvderde">D</strong>esarrollador!</h1>
+            <p class="lead">apasionado por la tecnologìa , con ardua experiencia y una amplia trayectoria en el rubro IT.</p>
             <br>
             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
               
@@ -138,7 +138,8 @@
           <div #myTabContent2 id="myTabContent2"  class="jumbotron">
             <blockquote class="blockquote text-center">
             <h1 class="display-3"><strong class="bazul">T</strong>ecnologias</h1>
-            <hr>
+            <br>
+            <hr id="hr1">
             <div id="contenedorCarta">
                 <nz-card id="cartitaaa" class="hvr-curl-top-right" *ngFor="let frame of frames; index as id" nzHoverable style="width:240px" [nzCover]="coverTemplate">
                     <nz-card-meta nzTitle="{{frame.name}}" nzDescription="{{frame.name}}"></nz-card-meta>
@@ -160,13 +161,14 @@
               </div>
             </div> -->
            
-            <hr>
+            <hr id="hr2">
+            <br>
             <h2 style="color: gray" id="escri"><strong style="color: greenyellow">E</strong>scribeme un comentario</h2>
            
             </blockquote>
-           
+            <formComponent (mailer)="enviarmail($event)"></formComponent>
             <!-- con novalidate se activa la propiedad invalid en el boton accediendo por el formgroup "user" -->
-            <form  id="formu" [formGroup]="user" novalidate (ngSubmit)="enviarmail()">
+            <!-- <form  id="formu" [formGroup]="user" novalidate (ngSubmit)="enviarmail()">
               <fieldset>
                 <label style="text-align: start" class="control-label" for="readOnlyInput">Ingrese su Email</label>
                 <input class="form-control " formControlName="email" id="readOnlyInput" type="email" placeholder="Ingrese su Email" >
@@ -177,7 +179,7 @@
                 <div class="error"*ngIf="user.get('texto').hasError('required') && user.get('texto').touched">Texto requerido...</div>
                 <button type="submit" style="width: 100%; margin-top: 10%" class="btn " [disabled]="user.invalid" >Enviar</button>
               </fieldset>
-            </form>
+            </form> -->
           </div>
              
           <div #footer id="footer"> 
