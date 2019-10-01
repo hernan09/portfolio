@@ -4,12 +4,20 @@
     margin-top: 5%;
   }
   .ant-input-affix-wrapper .ant-input {
+    border: none;
     position: relative;
     text-align: inherit;
     min-height: 100%;
     border-bottom: 2px solid black;
 }
+.ant-input-affix-wrapper .ant-input:focus{
+  border: none;
+  box-shadow: none;
+  border-bottom: 4px solid #2098D1 !important;
+  transition: all ease 0.16s;
+}
 textarea.ant-input {
+  border: none;
   max-width: 100%;
   height: auto;
   min-height: 32px;
@@ -18,6 +26,12 @@ textarea.ant-input {
   -webkit-transition: all .3s,height 0s;
   transition: all .3s,height 0s;
   border-bottom: 2px solid black;
+}
+textarea.ant-input:focus{
+  border: none;
+  box-shadow: none;
+  border-bottom: 4px solid #2098D1 !important;
+  transition: all ease 0.16s;
 }
 
   .login-form-forgot {
@@ -28,5 +42,8 @@ textarea.ant-input {
 
   .login-form-button {
     width: 100%;
-    border-bottom: solid 2px #2098D1;
+    border: none;
+    
   }
+
+ 
