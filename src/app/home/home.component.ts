@@ -26,7 +26,8 @@ export class HomeComponent implements OnInit {
   horario = Date.now();
   user: any;
   show2: boolean = true;
-  alertCard: boolean = false ;
+  alertCard: boolean = false;
+  alertCard2:boolean = false;
   links = [
     {"link": "https://github.com/hernan09/React-App-ShowVideo","name":"Wow Videos","frame":"React.js"},
     {"link": "https://github.com/hernan09/ionic-animal","name":"sonidos de animales","frame":"Ionic"},
@@ -63,14 +64,6 @@ export class HomeComponent implements OnInit {
       config.easing = 'cubic-bezier(0.645, 0.045, 0.355, 1)';
 
       setInterval(() => {console.log(this.horario), this.hora(); }, 1000);
-
-      this.router.events.subscribe((routerEvent: Event) => {
-          if (routerEvent instanceof NavigationStart) {
-                  this.load = true;
-          } else if (routerEvent instanceof NavigationEnd) {
-                  this.load = false;
-          }
-      });
    }
 
   contact() {
@@ -92,7 +85,11 @@ export class HomeComponent implements OnInit {
   ocultarAlerta() {
     setTimeout(() => {this.alertCard = false; }, 3000);
   }
-  
+  mostrarYoCultarCarta2() {
+      setTimeout(() => { this.alertCard2 = true; }, 1000);
+      setTimeout(() => {this.alertCard2 = false; }, 4000);
+  }
+
   enviarmail(event) {
    this.load = true;
    const mailEnviado = event.value;
@@ -105,6 +102,7 @@ export class HomeComponent implements OnInit {
      if (data) {
        this.load = false;
        this.alertCard = true;
+       this.mostrarYoCultarCarta2();
        this.ocultarAlerta();
      }
    });

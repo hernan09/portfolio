@@ -22,6 +22,9 @@
                 <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(jumbo2)"data-toggle="collapse"data-target=" .navbar-collapse.show">About<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
+          <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(myTabContent2)"data-toggle="collapse"data-target=" .navbar-collapse.show">Tecnologias<span class="sr-only">(current)</span></a>
+       </li>
+        <li class="nav-item">
             <a class="nav-link colorLink hvr-underline-from-left"(click)="scrollToElement(footer)"data-toggle="collapse"data-target=" .navbar-collapse.show">Portfolio<span class="sr-only">(current)</span></a>
         </li>
        
@@ -31,6 +34,7 @@
   
   </nav>
       <!---->
+      <nz-alert id="alert2" *ngIf="alertCard2" nzType="info" nzMessage="Hecho" nzMessage="Su informacion fue guardada de forma segura" nzCloseable nzShowIcon></nz-alert>
       <nz-alert *ngIf="alertCard"
       nzType="success"
       nzCloseable

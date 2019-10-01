@@ -3,12 +3,30 @@
     max-width: 300px;
     margin-top: 5%;
   }
+  .ant-input-affix-wrapper .ant-input {
+    position: relative;
+    text-align: inherit;
+    min-height: 100%;
+    border-bottom: 2px solid black;
+}
+textarea.ant-input {
+  max-width: 100%;
+  height: auto;
+  min-height: 32px;
+  line-height: 1.5;
+  vertical-align: bottom;
+  -webkit-transition: all .3s,height 0s;
+  transition: all .3s,height 0s;
+  border-bottom: 2px solid black;
+}
 
   .login-form-forgot {
     float: center;
-   color: #2098D1;
+    color: #2098D1;
+
   }
 
   .login-form-button {
     width: 100%;
+    border-bottom: solid 2px #2098D1;
   }

@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./boton-top.component.css']
 })
 export class BotonTopComponent implements OnInit {
-
+ 
   frames = [
     {"name": "Angular.js","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png","descripcion":"Amplia experiencia con este fantastico frameworks"},
     {"name": "React.js","img":"https://cdn.worldvectorlogo.com/logos/react.svg","descripcion":"Amplia experiencia con este fantastico frameworks "},
@@ -28,6 +28,7 @@ export class BotonTopComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {
     console.log(this.frames);
+   
   }
 
   ngOnInit() {
