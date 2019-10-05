@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , HostListener } from '@angular/core';
 // estyo me sirve para hacer enrutado ancla con animacion en los links
 import * as smoothscroll from 'smoothscroll-polyfill';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -20,6 +20,17 @@ import { IfStmt } from '@angular/compiler';
   providers: [ NgsRevealConfig ]
 })
 export class HomeComponent implements OnInit {
+
+  @HostListener('scroll', ['$event'])
+
+  onEventScroll($event) {
+    const top = $event.srcElement.scrollTop;
+    console.log( 'aca esta el vento scroll.....', top);
+
+    if (top >= 100) {
+      console.log('TOPEEEEEE...');
+    }
+  }
   jquery: any;
   load: boolean = false;
   aboutMostrar: boolean = false;
@@ -98,6 +109,7 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('mailStorage', mailEnviado.email);
 
    this.http.post('https://senmail.herokuapp.com/mailer', mailEnviado).subscribe(data => {
+    
      console.log('data enviada', data);
      if (data) {
        this.load = false;
