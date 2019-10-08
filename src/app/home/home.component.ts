@@ -23,14 +23,7 @@ export class HomeComponent implements OnInit {
 
   @HostListener('scroll', ['$event'])
 
-  onEventScroll($event) {
-    const top = $event.srcElement.scrollTop;
-    console.log( 'aca esta el vento scroll.....', top);
-
-    if (top >= 100) {
-      console.log('TOPEEEEEE...');
-    }
-  }
+  cambiarMenu: boolean = false;
   jquery: any;
   load: boolean = false;
   aboutMostrar: boolean = false;
@@ -76,6 +69,18 @@ export class HomeComponent implements OnInit {
 
       setInterval(() => {console.log(this.horario), this.hora(); }, 1000);
    }
+
+   onEventScroll($event) {
+    const top = $event.srcElement.scrollTop;
+    console.log( 'aca esta el vento scroll.....', top);
+
+    if (top >= 100) {
+      this.cambiarMenu = true;
+    } else {
+      this.cambiarMenu = false;
+    }
+    console.log('booleano del menu', this.cambiarMenu);
+  }
 
   contact() {
 
