@@ -1,5 +1,5 @@
 <div class="loading" *ngIf="load">
-  <h1 text-center>Guardando Informacion.....</h1>
+ 
 </div>
 <div id="body" *ngIf="!load" data-spy="scroll"data-target="#navbarSupportedContent" (scroll)="onEventScroll($event)">
   <nav [ngClass]="{'cambionav':cambiarMenu == true}" class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbaar">
@@ -101,14 +101,22 @@
            
             <blockquote id="linkss" class="blockquote text-center">
                 <h1 id="proyec" style="color: black"><strong>M</strong>is proyectos de Github</h1>
-              <ul id="ulink">
+                <div id="lista1">
+                  <ul>
+                      <li *ngFor="let link of links">
+                          <p>{{link.frame}}</p>
+                        <a href="{{link.link}}">{{link.link}}</a></li>
+                  </ul>
+              </div>
+
+              <!-- <ul id="ulink">
                 <li *ngFor="let link of links">
-                      <!-- <h5 for="">{{link.name}}</h5> -->
-                      <p>{{link.frame}}</p>
+                       <h5 for="">{{link.name}}</h5> -->
+                      <!-- <p>{{link.frame}}</p>
                    <a  href="{{link.link}}">{{link.link}}</a>
                       
-                </li>
-              </ul>
+                </li> -->
+              <!-- </ul> --> 
               
               </blockquote>
             
