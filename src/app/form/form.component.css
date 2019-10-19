@@ -2,6 +2,7 @@
     margin: auto;
     max-width: 300px;
     margin-top: 5%;
+   
   }
   .ant-input-affix-wrapper .ant-input {
     border: none;
@@ -43,7 +44,9 @@ textarea.ant-input:focus{
   .login-form-button {
     width: 100%;
     border: none;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
     
   }
+  
 
  

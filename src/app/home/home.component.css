@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 .navbar {
-  position: relative;
+  position: fixed;
   width: 100%;
   top: 0;
   display: -webkit-box;
@@ -23,9 +23,9 @@
   font-family: 'Amatic SC', cursive;
   font-size: 1.4rem;
   left: 0;
-  transition: all ease 0.7s;
-  
  
+  
+  transition: all ease 0.7s;
 }
 
 
@@ -50,35 +50,67 @@
   font-family: 'Amatic SC', cursive;
   font-size: 1.4rem;
   left: 0;
-  -webkit-animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  
+  -webkit-animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-@-webkit-keyframes flip-in-hor-bottom {
+.animarTexto{
+  -webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  
+}
+@-webkit-keyframes flip-in-hor-top {
   0% {
-    -webkit-transform: rotateX(80deg);
-            transform: rotateX(80deg);
+    -webkit-transform: rotateX(-80deg);
+            transform: rotateX(-80deg);
     opacity: 0;
   }
   100% {
     -webkit-transform: rotateX(0);
             transform: rotateX(0);
-    opacity: 0.9;
+    opacity: 1;
   }
 }
-@keyframes flip-in-hor-bottom {
+@keyframes flip-in-hor-top {
   0% {
-    -webkit-transform: rotateX(80deg);
-            transform: rotateX(80deg);
+    -webkit-transform: rotateX(-80deg);
+            transform: rotateX(-80deg);
     opacity: 0;
   }
   100% {
     -webkit-transform: rotateX(0);
             transform: rotateX(0);
-    opacity: 0.9;
+    opacity: 1;
   }
 }
+
+
+
+
  
 nz-alert{
   width: 100%;
@@ -244,22 +276,37 @@ h1{
 
 
 #ulink{
-  padding: 0;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.4rem;
   
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  
 }
  #ulink>li{
+   width: 95%;
+   height: 125px;
+   margin: auto;
+   color: white;
+   margin-top: 10px;
+   padding: 10px;
    list-style: none;
-   
+   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+   background-color: rgb(53, 53, 53);
+   border-radius: 2%;
+   opacity: 0.9;
  }
  #ulali>li{
    list-style: none;
  }
 
+  
+
  @media(max-width:376px){
    #ulink>li>a{
-     font-size: 0.98rem;
+     font-size: 0.95rem;
    }
  }
 .card-header{
@@ -309,6 +356,7 @@ h1{
   max-width: 150px;
   max-height: 150px;
   margin: 5px;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
   
 }
 h1{
@@ -488,7 +536,11 @@ blockquote{
 #logofot{
   margin-top: 30px;
 }
-
+#linkss{
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
 
 #myTabContent{
   -webkit-animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -497,6 +549,9 @@ blockquote{
 }
 #myTabContent2{
   margin-top: -64px;
+  max-width: 600px;
+  margin: auto;
+  
 }
 
 #contenttecno{
@@ -511,6 +566,7 @@ blockquote{
   margin: auto;
 }
 #escri{
+  margin-left: 23%;
   font-family: 'Quicksand', sans-serif;
   
 }
@@ -535,10 +591,13 @@ fieldset {
 .loading>h1{
   position: fixed;
   top: 70%;
+  left: 40%;
   -webkit-animation: text-blur-out 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
 	 animation: text-blur-out 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
 
 }
+
+
 @media(min-width:765px){
   .loading>h1{
     position: fixed;
@@ -563,30 +622,42 @@ fieldset {
     position: fixed;
     top: 70%;
     left: 20%;
-    font-size: 3rem;
-    
+    font-size: 3rem; 
+  }
+  #columform{
+    margin-top: 10%;
   }
 }
 @media(max-width:426px){
   .loading>h1{
     position: fixed;
     top: 70%;
-    left: 1%;
+    left: 18%;
     font-size: 1.5rem;
     
   }
   #escri{
    font-size: 1.5rem;
-   
+   margin-left: 70px;
+   margin-bottom: 38px;
+  }
+  #linkss{
+    font-size: 0.7rem;
   }
 }
 @media(max-width:376px){
   .loading>h1{
     position: fixed;
     top: 70%;
-    left: 2%;
+    left: 14%;
     font-size: 1.2rem;
     
+  }
+  #linkss{
+    font-size: 0.6rem;
+  }
+  #escri{
+    margin-left: 47px;
   }
 }
 
@@ -608,6 +679,16 @@ fieldset>textarea{
   background-color: #2098D1;
   color:white;
 }
+
+@media(max-width:1026px){
+  #escri{
+    font-size: 1.8rem;
+    margin-left: 33%;
+  }
+  .loading>h1{
+    left: 31%;
+  }
+}
 @media(max-width:769px){
   .row{
     position: relative;
@@ -625,6 +706,14 @@ fieldset>textarea{
     filter: blur(1px);
     margin-bottom: 20px;
     
+  }
+  .loading>h1{
+    left: 28%;
+  }
+  #escri{
+    width: 300px;
+    margin: auto;
+    font-size: 1.5rem;
   }
 }
 @media(max-width:430px){
@@ -661,7 +750,7 @@ fieldset>textarea{
   #ulink{
     padding: 0;
     font-family: 'Quicksand', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 @media(max-width:380px){

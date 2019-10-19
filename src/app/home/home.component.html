@@ -1,5 +1,5 @@
 <div class="loading" *ngIf="load">
-  <h1 text-center>Enviando mail a su cuenta de correo.....</h1>
+  <h1 text-center>Guardando Informacion.....</h1>
 </div>
 <div id="body" *ngIf="!load" data-spy="scroll"data-target="#navbarSupportedContent" (scroll)="onEventScroll($event)">
   <nav [ngClass]="{'cambionav':cambiarMenu == true}" class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbaar">
@@ -22,7 +22,7 @@
                 <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(jumbo2)"data-toggle="collapse"data-target=" .navbar-collapse.show">About<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(myTabContent2)"data-toggle="collapse"data-target=" .navbar-collapse.show">Tecnologias<span class="sr-only">(current)</span></a>
+          <a class="nav-link hvr-underline-from-left"(click)="scrollToElement(coll)"data-toggle="collapse"data-target=" .navbar-collapse.show">Tecnologias<span class="sr-only">(current)</span></a>
        </li>
         <li class="nav-item">
             <a class="nav-link colorLink hvr-underline-from-left"(click)="scrollToElement(footer)"data-toggle="collapse"data-target=" .navbar-collapse.show">Portfolio<span class="sr-only">(current)</span></a>
@@ -64,7 +64,7 @@
             <blockquote class="blockquote text-center">
                 <p class="mb-0">Desarrollador FrontEnd apasionado por la tecnologia web</p>
                 <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                <button type="button" class="btn btn-outline-dark hvr-underline-from-left  pmd-ripple-effect">More</button>
+              
               </blockquote>
             
           </div>
@@ -77,7 +77,7 @@
          
            
             <blockquote class="blockquote text-center">
-            <h1 class="display-3"><strong style="color: greenyellow !important">D</strong>esarrollador Frontend</h1>
+            <h1 [ngClass]="{'animarTexto':mostrarTextoboleano == true}" class="display-3"><strong style="color: greenyellow !important">D</strong>esarrollador Frontend</h1>
             <div class="row" id="cartitas">
                 <div class="col s12 m6">
                 </div>
@@ -99,14 +99,13 @@
           </div>
           <div id="col2" class="col-md-12 col-sm-12">
            
-            <blockquote class="blockquote text-center">
+            <blockquote id="linkss" class="blockquote text-center">
                 <h1 id="proyec" style="color: black"><strong>M</strong>is proyectos de Github</h1>
               <ul id="ulink">
                 <li *ngFor="let link of links">
-                      <h5 for="">{{link.name}}</h5>
+                      <!-- <h5 for="">{{link.name}}</h5> -->
+                      <p>{{link.frame}}</p>
                    <a  href="{{link.link}}">{{link.link}}</a>
-                   <p>{{link.frame}}</p>
-                   <br>
                       
                 </li>
               </ul>
@@ -139,53 +138,35 @@
               
             </blockquote>
           </div>
-          <div #myTabContent2 id="myTabContent2"  class="jumbotron">
-            <blockquote class="blockquote text-center">
-            <h1 class="display-3"><strong class="bazul">T</strong>ecnologias</h1>
-            <br>
-            <hr id="hr1">
-            <div id="contenedorCarta">
-                <nz-card id="cartitaaa" class="hvr-curl-top-right" *ngFor="let frame of frames; index as id" nzHoverable style="width:240px" [nzCover]="coverTemplate">
-                    <nz-card-meta nzTitle="{{frame.name}}" nzDescription="{{frame.name}}"></nz-card-meta>
-                    <img id="imgcartitaa" src="{{frame.img}}" alt="">
-                    <button nz-button nzType="primary"  [routerLink]="['/tecnologi', id]">View</button>
-                </nz-card>
+          <div #coll class="row">
+            <div class="col-md-12 col-sm-12 col-xl-6">
+              <div #myTabContent2 id="myTabContent2"  class="jumbotron">
+                <blockquote class="blockquote text-center">
+                <h1 class="display-3"><strong class="bazul">T</strong>ecnologias</h1>
+                <br>
+                <hr id="hr1">
+                <div id="contenedorCarta">
+                    <nz-card id="cartitaaa" class="hvr-curl-top-right" *ngFor="let frame of frames; index as id" nzHoverable style="width:240px" [nzCover]="coverTemplate">
+                        <nz-card-meta nzTitle="{{frame.name}}" nzDescription="{{frame.name}}"></nz-card-meta>
+                        <img id="imgcartitaa" src="{{frame.img}}" alt="">
+                        <button nz-button nzType="primary"  [routerLink]="['/tecnologi', id]">View</button>
+                    </nz-card>
+                </div>
+                
+               
+                <hr id="hr2">
+                <br>
+             
+                </blockquote>
             </div>
             
-              
-            <!-- <div class="card" id="aboutme" style="width: 18rem;">
-             
-              <div class="card-body">
-                <div id="contenttecno" *ngFor="let frame of frames" class="hvr-skew-backward hvr-curl-top-right">
-                      <img id="loguito" src="{{frame.img}}" alt="">
-                      <p>{{frame.name}}</p>
-                </div>
-               
-               
-              </div>
-            </div> -->
-           
-            <hr id="hr2">
-            <br>
-            <h2 style="color: gray" id="escri"><strong style="color: greenyellow">E</strong>scribeme un comentario</h2>
-           
-            </blockquote>
-            <formComponent (mailer)="enviarmail($event)"></formComponent>
-            <!-- con novalidate se activa la propiedad invalid en el boton accediendo por el formgroup "user" -->
-            <!-- <form  id="formu" [formGroup]="user" novalidate (ngSubmit)="enviarmail()">
-              <fieldset>
-                <label style="text-align: start" class="control-label" for="readOnlyInput">Ingrese su Email</label>
-                <input class="form-control " formControlName="email" id="readOnlyInput" type="email" placeholder="Ingrese su Email" >
-                <div class="error"*ngIf="user.get('email').hasError('required') && user.get('email').touched">Email requerido...</div>
-                <br>
-                <label for="exampleTextarea">Comentario</label>
-                <textarea class="form-control " name="texto"formControlName="texto" id="exampleTextarea" rows="3" ></textarea>
-                <div class="error"*ngIf="user.get('texto').hasError('required') && user.get('texto').touched">Texto requerido...</div>
-                <button type="submit" style="width: 100%; margin-top: 10%" class="btn " [disabled]="user.invalid" >Enviar</button>
-              </fieldset>
-            </form> -->
           </div>
-             
+          <div id="columform" class="col-md-12 col-sm-12 col-xl-6">  
+            <h2 style="color: gray" id="escri"><strong style="color: greenyellow">E</strong>scribeme un comentario</h2>
+            <formComponent (mailer)="enviarmail($event)"></formComponent>
+          </div>
+        </div>
+         
           <div #footer id="footer"> 
            
                <button *ngIf="!show" id="fab"  type="button"(click)="contact()"><img src="../../assets/css/user.png"/><p>Contactactame</p></button> 
@@ -197,7 +178,7 @@
                       <span class="icon-facebook"></span>
                 
                   </div>
-                  <!-- https://www.freelogodesign.org/file/app/client/thumb/e1dcdd78-1bfb-482b-a3d1-4c1af15349b8_200x200.png?1563561635271 -->
+                 
                  
                   <img src="../../assets/imgnes/logoHernan.png" id="logofot">
            

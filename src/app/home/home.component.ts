@@ -22,7 +22,7 @@ import { IfStmt } from '@angular/compiler';
 export class HomeComponent implements OnInit {
 
   @HostListener('scroll', ['$event'])
-
+  mostrarTextoboleano:boolean = false;
   cambiarMenu: boolean = false;
   jquery: any;
   load: boolean = false;
@@ -78,6 +78,12 @@ export class HomeComponent implements OnInit {
       this.cambiarMenu = true;
     } else {
       this.cambiarMenu = false;
+    }
+
+    if (top >= 250) {
+      this.mostrarTextoboleano = true;
+    } else {
+      this.mostrarTextoboleano = false;
     }
     console.log('booleano del menu', this.cambiarMenu);
   }
